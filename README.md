@@ -1,5 +1,8 @@
 # Claude Code Effort Shortcut
 
+[![npm version](https://img.shields.io/npm/v/claude-code-effort-shortcut)](https://www.npmjs.com/package/claude-code-effort-shortcut)
+[![license](https://img.shields.io/github/license/richkuo/claude-code-effort-shortcut)](LICENSE)
+
 A Claude Code plugin that changes the reasoning effort level from the keyboard.
 
 - **Cmd+E** (or Alt+E) steps the effort up: low, medium, high, xhigh, then back to low.
@@ -27,12 +30,6 @@ The plugin sets the effort on each main-thread model request. It does not add ro
    ```
    /plugin marketplace add richkuo/claude-code-effort-shortcut
    /plugin install effort-shortcut@richkuo
-   ```
-
-   Or install it from npm:
-
-   ```
-   /plugin install claude-code-effort-shortcut@npm
    ```
 
 2. Bind the keys in `~/.claude/keybindings.json`:
