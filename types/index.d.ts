@@ -3,7 +3,9 @@ declare module 'claude-code' {
     'effort-shortcut': {
       pick: Record<string, 'low' | 'medium' | 'high' | 'xhigh' | 'max'>
       engine: Record<string, 'low' | 'medium' | 'high' | 'xhigh' | 'max'>
-      label: 'low' | 'medium' | 'high' | 'xhigh' | 'max' | null
+      modelPick: string | null
+      engineModel: string | null
+      footer: string | null
     }
   }
 }
