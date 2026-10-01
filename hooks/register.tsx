@@ -117,7 +117,7 @@ async function shiftLevel($: Engine, options: PluginOptions, direction: Directio
   const picks = (await $.state.get(pickRef)).value ?? {}
   await $.state.set(pickRef, { ...picks, [model]: target })
   await $.store.set(SAVED_LEVELS, { ...(await loadSavedLevels($)), [model]: target })
-  await refreshFooter($)
+  $.ui.log(`Set to ${await refreshFooter($)}`)
 }
 
 async function shiftModel($: Engine, options: PluginOptions, direction: Direction) {
@@ -131,7 +131,7 @@ async function shiftModel($: Engine, options: PluginOptions, direction: Directio
     await $.state.set(modelPickRef, target.id)
     await $.store.set(SAVED_MODEL, target.id)
   }
-  await refreshFooter($)
+  $.ui.log(`Set to ${await refreshFooter($)}`)
 }
 
 async function activeModel($: Engine): Promise<string> {
@@ -189,4 +189,5 @@ async function refreshFooter($: Engine) {
   const name = entry?.name ?? model
   const text = entry?.effort === false ? name : `${name} · effort: ${await currentLevel($, model)}`
   if ((await $.state.get(footerRef)).value !== text) await $.state.set(footerRef, text)
+  return text
 }
