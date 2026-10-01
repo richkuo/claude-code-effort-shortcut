@@ -13,6 +13,7 @@ A Claude Code plugin that changes the reasoning effort level and the model from 
 | Previous model | Option+Shift+P | Alt+Shift+P |
 
 - The footer shows the model and level that the next request uses, for example `Sonnet 5.5 · effort: high`.
+- Each key press adds a dim line to the transcript, for example `Set to Sonnet 5.5 · effort: high`. The model does not read it.
 - The plugin saves your last model and your effort pick for each model. New sessions start with them.
 
 ## Requirements
