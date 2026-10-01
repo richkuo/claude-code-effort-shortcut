@@ -130,6 +130,3 @@ To load a local copy in every session, set `CLAUDE_CODE_PLUGIN_DIRS` to the fold
 ## License
 
 MIT
-
----
-Updated with LLM: Sonnet 5.5 | high | Harness: Claude Code
