@@ -74,11 +74,9 @@ In Claude Code, `meta` is the Alt or Option key. Terminals keep Cmd shortcuts fo
 keybind = super+e=esc:e
 keybind = super+shift+e=esc:E
 keybind = super+p=esc:p
-keybind = option+p=esc:p
-keybind = option+shift+p=esc:P
 ```
 
-The `super+p` line is not tested. You can also set `macos-option-as-alt = true` in place of the Option+P lines (not tested), but then no Option key types special characters.
+The `super+p` line is not tested. Ghostty sends Option+E and Option+P as Meta+E and Meta+P without more lines.
 
 **Other terminals** (not tested). Use Option+E in place of Cmd+E, and set Option to send Meta:
 
