@@ -77,7 +77,7 @@ keybind = option+p=esc:p
 keybind = option+shift+p=esc:P
 ```
 
-The Cmd+E lines are tested. The Option+P lines are not tested. You can also set `macos-option-as-alt = true` in place of the Option+P lines, but then no Option key types special characters.
+You can also set `macos-option-as-alt = true` in place of the Option+P lines (not tested), but then no Option key types special characters.
 
 **Other terminals** (not tested). Use Option+E in place of Cmd+E, and set Option to send Meta:
 
