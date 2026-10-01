@@ -15,11 +15,11 @@ const FALLBACK: Level = 'high'
 const SAVED_LEVELS = 'savedPicks'
 const SAVED_MODEL = 'savedModel'
 
-const pickRef = { plugin: 'effort-shortcut', key: 'pick' } as const
-const engineRef = { plugin: 'effort-shortcut', key: 'engine' } as const
-const modelPickRef = { plugin: 'effort-shortcut', key: 'modelPick' } as const
-const engineModelRef = { plugin: 'effort-shortcut', key: 'engineModel' } as const
-const footerRef = { plugin: 'effort-shortcut', key: 'footer' } as const
+const pickRef = { plugin: 'model-effort-shortcuts', key: 'pick' } as const
+const engineRef = { plugin: 'model-effort-shortcuts', key: 'engine' } as const
+const modelPickRef = { plugin: 'model-effort-shortcuts', key: 'modelPick' } as const
+const engineModelRef = { plugin: 'model-effort-shortcuts', key: 'engineModel' } as const
+const footerRef = { plugin: 'model-effort-shortcuts', key: 'footer' } as const
 
 const isLevel = (value: unknown): value is Level => typeof value === 'string' && (ORDER as readonly string[]).includes(value)
 const entryFor = (model: string) => MODELS.find(entry => model === entry.id || model.startsWith(entry.prefix))
@@ -83,10 +83,10 @@ export const register: Register = (on, options) => {
     const { Box, Button } = $.ui.resolve(e)
     return (
       <Box display="none">
-        <Button key="effort-shortcut-up" label="raise effort" action="strip:jump9" onPress={() => shiftLevel($, options, 'up')} />
-        <Button key="effort-shortcut-down" label="lower effort" action="strip:jump8" onPress={() => shiftLevel($, options, 'down')} />
-        <Button key="effort-shortcut-model-up" label="next model" action="strip:jump7" onPress={() => shiftModel($, options, 'up')} />
-        <Button key="effort-shortcut-model-down" label="previous model" action="strip:jump6" onPress={() => shiftModel($, options, 'down')} />
+        <Button key="model-effort-shortcuts-up" label="raise effort" action="strip:jump9" onPress={() => shiftLevel($, options, 'up')} />
+        <Button key="model-effort-shortcuts-down" label="lower effort" action="strip:jump8" onPress={() => shiftLevel($, options, 'down')} />
+        <Button key="model-effort-shortcuts-model-up" label="next model" action="strip:jump7" onPress={() => shiftModel($, options, 'up')} />
+        <Button key="model-effort-shortcuts-model-down" label="previous model" action="strip:jump6" onPress={() => shiftModel($, options, 'down')} />
       </Box>
     )
   })

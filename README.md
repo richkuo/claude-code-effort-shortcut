@@ -1,7 +1,7 @@
-# Claude Code Effort Shortcut
+# Claude Code Model Effort Shortcuts
 
-[![npm version](https://badgen.net/npm/v/claude-code-effort-shortcut)](https://www.npmjs.com/package/claude-code-effort-shortcut)
-[![license](https://badgen.net/github/license/richkuo/claude-code-effort-shortcut)](LICENSE)
+[![npm version](https://badgen.net/npm/v/claude-code-model-effort-shortcuts)](https://www.npmjs.com/package/claude-code-model-effort-shortcuts)
+[![license](https://badgen.net/github/license/richkuo/claude-code-model-effort-shortcuts)](LICENSE)
 
 A Claude Code plugin that changes the reasoning effort level and the model from the keyboard.
 
@@ -30,8 +30,8 @@ The plugin sets the model and effort on each main-thread model request. It does 
 1. Add the marketplace and install the plugin in Claude Code:
 
    ```
-   /plugin marketplace add richkuo/claude-code-effort-shortcut
-   /plugin install effort-shortcut@richkuo
+   /plugin marketplace add richkuo/claude-code-model-effort-shortcuts
+   /plugin install model-effort-shortcuts@richkuo
    ```
 
 2. Bind the keys in `~/.claude/keybindings.json`:
