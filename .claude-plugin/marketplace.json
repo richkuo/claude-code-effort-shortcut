@@ -1,0 +1,14 @@
+{
+  "name": "richkuo",
+  "owner": {
+    "name": "Richard Kuo"
+  },
+  "description": "Claude Code plugins by Richard Kuo",
+  "plugins": [
+    {
+      "name": "effort-shortcut",
+      "source": "./",
+      "description": "Keyboard shortcuts that step the reasoning effort level up and down"
+    }
+  ]
+}
