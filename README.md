@@ -5,10 +5,13 @@
 
 A Claude Code plugin that changes the reasoning effort level and the model from the keyboard.
 
-- **Cmd+E** or **Option+E** (Alt+E) steps the effort up: low, medium, high, xhigh, then back to low.
-- **Cmd+Shift+E** or **Option+Shift+E** (Alt+Shift+E) steps it down, and wraps from low to xhigh.
-- **Cmd+P** or **Option+P** (Alt+P) steps the model up: Haiku 4.5, Sonnet 5.5, Opus 5.5, Fable 5.1, then back to Haiku 4.5.
-- **Option+Shift+P** (Alt+Shift+P) steps the model down.
+| Action | macOS | Other keyboards |
+|---|---|---|
+| Effort up: low, medium, high, xhigh, then back to low | Cmd+E or Option+E | Alt+E |
+| Effort down, wrapping from low to xhigh | Cmd+Shift+E or Option+Shift+E | Alt+Shift+E |
+| Next model: Haiku 4.5, Sonnet 5.5, Opus 5.5, Fable 5.1, then back to Haiku 4.5 | Cmd+P or Option+P | Alt+P |
+| Previous model | Option+Shift+P | Alt+Shift+P |
+
 - The footer shows the model and level that the next request uses, for example `Sonnet 5.5 · effort: high`.
 - The plugin saves your last model and your effort pick for each model. New sessions start with them.
 
@@ -66,9 +69,12 @@ The plugin sets the model and effort on each main-thread model request. It does 
 
 ## Terminal setup
 
-In Claude Code, `meta` is the Alt or Option key. Terminals keep Cmd shortcuts for themselves, so Cmd+E and Cmd+P must be sent as Meta+E and Meta+P. On macOS, the terminal must also send Option+E and Option+P as Meta+E and Meta+P. If it does not, these keys type characters, for example `π` for Option+P.
+In Claude Code, `meta` is the Option key on macOS and the Alt key on other keyboards. Every shortcut must reach Claude Code as a Meta key.
 
-**Ghostty** (tested). Add these lines to the Ghostty config, then reload it:
+- **Option keys.** The terminal must send Option as Meta. If it does not, the keys type characters, for example `π` for Option+P.
+- **Cmd keys.** Terminals keep Cmd shortcuts for themselves. To use Cmd+E, Cmd+Shift+E, and Cmd+P, map each one in the terminal to send `Esc` followed by `e`, `E`, or `p`.
+
+**Ghostty** (tested). Ghostty sends Option keys as Meta with no setup. For the Cmd keys, add these lines to the Ghostty config, then reload it:
 
 ```
 keybind = super+e=esc:e
@@ -76,14 +82,12 @@ keybind = super+shift+e=esc:E
 keybind = super+p=esc:p
 ```
 
-Ghostty sends Option+E and Option+P as Meta+E and Meta+P without more lines.
-
-**Other terminals** (not tested). Use Option+E in place of Cmd+E, and set Option to send Meta:
+**Other terminals** (not tested). Set Option to send Meta:
 
 - Terminal.app: Settings, Profiles, Keyboard, turn on "Use Option as Meta key".
 - iTerm2: Settings, Profiles, Keys, set "Left Option key" to "Esc+".
 
-You can also map Cmd+E in your terminal to send `Esc` followed by `e`, as the Ghostty lines do. Do the same for the other keys.
+To use the Cmd keys too, map them in the terminal as the Ghostty lines do.
 
 ## Settings
 
@@ -99,7 +103,7 @@ Run `/config` to change these settings:
 - If Claude Code's own model changes during the session, the plugin removes your model pick and follows Claude Code. This includes `/model <name>` and the model picker.
 - `/effort` without a level does not remove your pick unless you choose a new level.
 - When the model shortcut reaches Claude Code's own model, the plugin removes the model pick.
-- Each terminal keeps its own picks. The last picks are also saved, and new sessions start with them.
+- Each terminal keeps its own picks.
 
 ## Limits
 
@@ -128,4 +132,4 @@ To load a local copy in every session, set `CLAUDE_CODE_PLUGIN_DIRS` to the fold
 MIT
 
 ---
-Created with LLM: Opus 5.5 | high | Harness: Claude Code
+Updated with LLM: Sonnet 5.5 | high | Harness: Claude Code
