@@ -1,5 +1,8 @@
 # Claude Code Effort Shortcut
 
+[![npm version](https://img.shields.io/npm/v/claude-code-effort-shortcut)](https://www.npmjs.com/package/claude-code-effort-shortcut)
+[![license](https://img.shields.io/github/license/richkuo/claude-code-effort-shortcut)](LICENSE)
+
 A Claude Code plugin that changes the reasoning effort level from the keyboard.
 
 - **Cmd+E** (or Alt+E) steps the effort up: low, medium, high, xhigh, then back to low.
