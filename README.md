@@ -5,8 +5,8 @@
 
 A Claude Code plugin that changes the reasoning effort level and the model from the keyboard.
 
-- **Cmd+E** (or Alt+E) steps the effort up: low, medium, high, xhigh, then back to low.
-- **Cmd+Shift+E** (or Alt+Shift+E) steps it down, and wraps from low to xhigh.
+- **Cmd+E** or **Option+E** (Alt+E) steps the effort up: low, medium, high, xhigh, then back to low.
+- **Cmd+Shift+E** or **Option+Shift+E** (Alt+Shift+E) steps it down, and wraps from low to xhigh.
 - **Cmd+P** or **Option+P** (Alt+P) steps the model up: Haiku 4.5, Sonnet 5.5, Opus 5.5, Fable 5.1, then back to Haiku 4.5.
 - **Option+Shift+P** (Alt+Shift+P) steps the model down.
 - The footer shows the model and level that the next request uses, for example `Sonnet 5.5 · effort: high`.
@@ -66,7 +66,7 @@ The plugin sets the model and effort on each main-thread model request. It does 
 
 ## Terminal setup
 
-In Claude Code, `meta` is the Alt or Option key. Terminals keep Cmd shortcuts for themselves, so Cmd+E and Cmd+P must be sent as Meta+E and Meta+P. On macOS, the terminal must also send Option+P as Meta+P. If it does not, Option+P types a character such as `π`.
+In Claude Code, `meta` is the Alt or Option key. Terminals keep Cmd shortcuts for themselves, so Cmd+E and Cmd+P must be sent as Meta+E and Meta+P. On macOS, the terminal must also send Option+E and Option+P as Meta+E and Meta+P. If it does not, these keys type characters, for example `π` for Option+P.
 
 **Ghostty** (tested). Add these lines to the Ghostty config, then reload it:
 
