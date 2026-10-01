@@ -29,6 +29,12 @@ The plugin sets the effort on each main-thread model request. It does not add ro
    /plugin install effort-shortcut@richkuo
    ```
 
+   Or install it from npm:
+
+   ```
+   /plugin install claude-code-effort-shortcut@npm
+   ```
+
 2. Bind the keys in `~/.claude/keybindings.json`:
 
    ```json
