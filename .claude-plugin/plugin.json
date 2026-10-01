@@ -1,10 +1,10 @@
 {
-  "name": "effort-shortcut",
+  "name": "model-effort-shortcuts",
   "version": "0.2.0",
   "author": {
     "name": "Richard Kuo"
   },
-  "repository": "https://github.com/richkuo/claude-code-effort-shortcut",
+  "repository": "https://github.com/richkuo/claude-code-model-effort-shortcuts",
   "license": "MIT",
   "description": "Keyboard shortcuts that step the reasoning effort level and the model up and down; the footer shows what each request uses",
   "types": "./types/index.d.ts",
