@@ -76,7 +76,7 @@ keybind = super+shift+e=esc:E
 keybind = super+p=esc:p
 ```
 
-The `super+p` line is not tested. Ghostty sends Option+E and Option+P as Meta+E and Meta+P without more lines.
+Ghostty sends Option+E and Option+P as Meta+E and Meta+P without more lines.
 
 **Other terminals** (not tested). Use Option+E in place of Cmd+E, and set Option to send Meta:
 
