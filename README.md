@@ -7,8 +7,8 @@ A Claude Code plugin that changes the reasoning effort level and the model from 
 
 - **Cmd+E** (or Alt+E) steps the effort up: low, medium, high, xhigh, then back to low.
 - **Cmd+Shift+E** (or Alt+Shift+E) steps it down, and wraps from low to xhigh.
-- **Cmd+M** (or Alt+M) steps the model up: Haiku 4.5, Sonnet 5.5, Opus 5.5, Fable 5.1, then back to Haiku 4.5.
-- **Cmd+Shift+M** (or Alt+Shift+M) steps the model down.
+- **Cmd+P** or **Option+P** (Alt+P) steps the model up: Haiku 4.5, Sonnet 5.5, Opus 5.5, Fable 5.1, then back to Haiku 4.5.
+- **Option+Shift+P** (Alt+Shift+P) steps the model down.
 - The footer shows the model and level that the next request uses, for example `Sonnet 5.5 · effort: high`.
 - The plugin saves your last model and your effort pick for each model. New sessions start with them.
 
@@ -44,8 +44,14 @@ The plugin sets the model and effort on each main-thread model request. It does 
          "bindings": {
            "meta+e": "strip:jump9",
            "meta+shift+e": "strip:jump8",
-           "meta+m": "strip:jump7",
-           "meta+shift+m": "strip:jump6"
+           "meta+p": "strip:jump7",
+           "meta+shift+p": "strip:jump6"
+         }
+       },
+       {
+         "context": "Chat",
+         "bindings": {
+           "meta+p": null
          }
        }
      ]
@@ -54,24 +60,25 @@ The plugin sets the model and effort on each main-thread model request. It does 
 
    A plugin cannot own a key. It can only listen for Claude Code's own keybinding actions. The plugin listens for `strip:jump9` (effort up), `strip:jump8` (effort down), `strip:jump7` (next model), and `strip:jump6` (previous model). You can bind any modified key or chord to them.
 
+   Option+P opens the model picker by default. The `Chat` entry removes that default so that Option+P goes to the plugin. Use `/model` to open the model picker.
+
 3. Set up your terminal (next section), then restart Claude Code.
 
 ## Terminal setup
 
-In Claude Code, `meta` is the Alt or Option key. Terminals keep Cmd shortcuts for themselves, so Cmd+E and Cmd+M must be sent as Meta+E and Meta+M.
+In Claude Code, `meta` is the Alt or Option key. Terminals keep Cmd shortcuts for themselves, so Cmd+E and Cmd+P must be sent as Meta+E and Meta+P. On macOS, the terminal must also send Option+P as Meta+P. If it does not, Option+P types a character such as `π`.
 
 **Ghostty** (tested). Add these lines to the Ghostty config, then reload it:
 
 ```
 keybind = super+e=esc:e
 keybind = super+shift+e=esc:E
-keybind = super+m=esc:m
-keybind = super+shift+m=esc:M
+keybind = super+p=esc:p
 ```
 
-In Ghostty, these lines replace the macOS minimize shortcut (Cmd+M).
+Ghostty sends Option+E and Option+P as Meta+E and Meta+P without more lines.
 
-**Other terminals** (not tested). Use the Option keys in place of Cmd, and set Option to send Meta:
+**Other terminals** (not tested). Use Option+E in place of Cmd+E, and set Option to send Meta:
 
 - Terminal.app: Settings, Profiles, Keyboard, turn on "Use Option as Meta key".
 - iTerm2: Settings, Profiles, Keys, set "Left Option key" to "Esc+".
