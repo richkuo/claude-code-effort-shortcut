@@ -79,14 +79,19 @@ export const register: Register = (on, options) => {
     )
   })
 
-  on('ui.render', { component: 'AbovePrompt' }, async ($, e) => {
+  on('ui.render', { component: 'AbovePrompt' }, async ($, e, next) => {
+    if (e.props.hasSurvey) return next(e)
+    const below = await next(e)
     const { Box, Button } = $.ui.resolve(e)
     return (
-      <Box display="none">
-        <Button key="model-effort-shortcuts-up" label="raise effort" action="strip:jump9" onPress={() => shiftLevel($, options, 'up')} />
-        <Button key="model-effort-shortcuts-down" label="lower effort" action="strip:jump8" onPress={() => shiftLevel($, options, 'down')} />
-        <Button key="model-effort-shortcuts-model-up" label="next model" action="strip:jump7" onPress={() => shiftModel($, options, 'up')} />
-        <Button key="model-effort-shortcuts-model-down" label="previous model" action="strip:jump6" onPress={() => shiftModel($, options, 'down')} />
+      <Box>
+        <Box display="none">
+          <Button key="model-effort-shortcuts-up" label="raise effort" action="strip:jump9" onPress={() => shiftLevel($, options, 'up')} />
+          <Button key="model-effort-shortcuts-down" label="lower effort" action="strip:jump8" onPress={() => shiftLevel($, options, 'down')} />
+          <Button key="model-effort-shortcuts-model-up" label="next model" action="strip:jump7" onPress={() => shiftModel($, options, 'up')} />
+          <Button key="model-effort-shortcuts-model-down" label="previous model" action="strip:jump6" onPress={() => shiftModel($, options, 'down')} />
+        </Box>
+        {below}
       </Box>
     )
   })
