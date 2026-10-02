@@ -18,14 +18,9 @@ A Claude Code plugin that changes the reasoning effort level and the model from 
 
 ## Requirements
 
-- Claude Code with plugin hook modules. This plugin uses an early-access plugin API that can change between releases. It was built and tested on Claude Code 2.1.286.
-- Hook modules must be turned on. If they are off for your account, add this to the `env` block of `~/.claude/settings.json`:
-
-  ```json
-  "CLAUDE_CODE_ENABLE_FUNCTION_HOOKS": "1"
-  ```
-
-  This setting also lets hook modules from your other installed plugins run.
+- Claude Code 2.1.287 or later. Hook modules are on by default. You do not need to turn them on.
+- This plugin uses an early-access plugin API. The API can change between releases.
+- `claude plugin validate .` passes on Claude Code 2.1.287.
 
 ## Install
 
